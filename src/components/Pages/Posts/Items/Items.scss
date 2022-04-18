@@ -1,0 +1,103 @@
+@import '../../../../utils/vars';
+
+.Items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  &::after {
+    content: "";
+    flex: auto;
+  }
+
+  article.Item {
+    width: calc((100% / 3) - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    padding-bottom: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 3px 43px #566A8A14;
+    border-radius: 10px;
+
+    .Item-inner {
+      padding: 0 20px;
+      position: relative;
+      height: 100%;
+
+      a {
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        font-family: $montserat;
+        font-weight: $medium;
+        font-size: 16px;
+        color: $darktext;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    h2 {
+      font-family: $montserat;
+      font-weight: $semibold;
+      font-size: 18px;
+      line-height: 25px;
+      color: $darktext;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    p {
+      font-family: $segoe;
+      font-weight: $regular;
+      font-size: 16px;
+      line-height: 25px;
+      color: $graytext;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    &:first-of-type {
+      flex-basis: calc(((100% / 3) * 2) - 10px);
+
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (max-width: $tabletsize) {
+  .Items {
+    article.Item {
+      width: calc((100% / 2) - 20px);
+
+      &:first-of-type {
+        flex-basis: 100%;
+
+        h2 {
+          font-size: 25px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobilesize) {
+  .Items article.Item {
+    width: 100%;
+  }
+}

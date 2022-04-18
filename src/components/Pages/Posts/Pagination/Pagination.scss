@@ -1,0 +1,127 @@
+@import '../../../../utils/vars';
+
+.PaginatedItems {
+  width: 100%;
+
+  section.search-area {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    background-color: $fineshade;
+    border-radius: 10px;
+
+    .input-area {
+      padding: 10px;
+      display: table-cell;
+      vertical-align: middle;
+
+      input {
+        width: 100%;
+        font-size: 12px;
+        padding: 12px 15px;
+        background: #EFEFF2 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        border: none;
+        color: $darkblue;
+        font-family: $montserat;
+        font-weight: $medium;
+
+        ::placeholder {
+          color: $placeholdercolor;
+        }
+      }
+
+      input:focus {
+        outline: none !important;
+          // border: 1px solid $shaded;
+          box-shadow: 0 0 10px $shaded;
+      }
+
+      select {
+        width: 100%;
+        font-size: 12px;
+        padding: 12px 15px;
+        background: #EFEFF2 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        border: none;
+        color: $darkblue;
+        font-family: $montserat;
+        font-weight: $medium;
+
+        ::placeholder {
+          color: $placeholdercolor;
+        }
+      }
+
+      select:focus {
+        outline: none !important;
+        
+        box-shadow: 0 0 10px $shaded;
+      }
+    }
+  }
+
+  .loading, .no-results {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: $darktext;
+    font-family: $montserat;
+    font-weight: $medium;
+  }
+
+  .pagination-container {
+    width: 100%;
+    text-align: center;
+
+    .MuiPagination-root {
+      display: inline-block;
+
+      button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-page {
+        font-family: $segoe;
+        font-size: 16px;
+        font-weight: $regular;
+        color: $graytext;
+      }
+
+     
+      button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-page.Mui-selected {
+        
+        background-color: transparent;
+        position: relative;
+        border-radius: 0;
+
+        ::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 5%;
+          width: 90%;
+          height: 4px;
+          background-color: $lightblue;
+        }
+      }
+
+      button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-page.Mui-selected::after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $lightblue;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobilesize) {
+  .PaginatedItems {
+    section.search-area {
+      display: block;
+
+      .input-area {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../../utils/vars';
+
+.Posts {
+  width: 100%;
+
+  header {
+    background-color: $darkblue;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    p {
+      font-size: $bigheadersize;
+      color: $white;
+      margin: 0;
+    }
+  }
+
+  section.paginated-items {
+    padding: 100px 0;
+  }
+
+}
+
+@media screen and (max-width: $tabletsize) {
+  .Posts {
+    header {
+      height: 200px;
+      p {
+        font-size: 35px;
+      }
+    }
+    section.paginated-items {
+      padding: 50px 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mobilesize) {
+  .Posts {
+    header {
+      height: 150px;
+      p {
+        font-size: 30px;
+      }
+    }
+    section.paginated-items {
+      padding: 25px 0;
+    }
+  }
+}

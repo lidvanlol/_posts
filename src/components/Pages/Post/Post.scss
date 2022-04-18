@@ -1,0 +1,212 @@
+@import '../../../utils/vars';
+
+.Post {
+  width: 100%;
+
+  .loading {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+
+    p {
+      width: 100%;
+    }
+  }
+
+  .inner-cont {
+    width: 95%;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    .article {
+      header h1 {
+        font-family: $montserat;
+        font-weight: $regular;
+        color: $darktext;
+        font-size: 70px;
+        line-height: 90px;
+        margin-top: 0;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+
+      p {
+        font-family: $segoe;
+        font-weight: $regular;
+        font-size: 16px;
+        line-height: 25px;
+        color: $graytext;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    nav {
+      width: 100%;
+      display: table;
+      table-layout: fixed;
+      padding: 90px 0 50px;
+
+      .link-holder {
+        display: table-cell;
+        vertical-align: middle;
+
+        &:last-of-type {
+          text-align: right;
+        }
+
+        a {
+          font-size: 16px;
+          font-family: $montserat;
+          font-weight: $medium;
+          color: $darktext;
+          text-decoration: none;
+
+          &:not(.disabled):hover {
+            text-decoration: underline;
+          }
+
+          &.disabled {
+            cursor: default;
+            color: $placeholdercolor;
+          }
+        }
+      }
+    }
+
+    .author {
+      background-color: $fineshade;
+      width: 100%;
+      display: table;
+      text-align: center;
+      margin-bottom: 100px;
+
+      .author-name {
+        display: table-cell;
+        vertical-align: middle;
+        width: 40%;
+        text-align: center;
+
+        .author-name-inner {
+          display: inline-block;
+          text-align: left;
+        }
+      }
+
+      .author-address {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+      }
+
+      .noun {
+        font-family: $segoe;
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: $regular;
+        color: $graytext;
+        margin: 20px 0 0 0;
+      }
+
+      .val {
+        font-family: $montserat;
+        font-weight: $semibold;
+        font-size: 20px;
+        line-height: 35px;
+        color: $darktext;
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-family: $montserat;
+      font-weight: $semibold;
+      font-size: 30px;
+      line-height: 35px;
+      color: $darktext;
+    }
+
+    .comment {
+      margin: 15px 0 30px;
+      padding: 30px;
+      background-color: $fineshade;
+
+      h3 {
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 35px;
+        color: $darktext;
+        font-family: $montserat;
+        font-weight: $semibold;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+
+      p {
+        margin-top: 0;
+        font-size: 16px;
+        color: $graytext;
+        line-height: 25px;
+        font-family: $segoe;
+        font-weight: $regular;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: $mobilesize) {
+  .Post {
+    .inner-cont {
+      padding: 70px 0;
+
+      .article {
+        header h1 {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      }
+
+      .author {
+        display: block;
+        margin-bottom: 50px;
+
+        .author-name {
+          display: block;
+          width: 100%;
+          padding: 0 15px;
+          text-align: left;
+        }
+
+        .author-address {
+          display: block;
+          text-align: left;
+          padding: 0 15px 1px 15px;
+
+          .noun {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .comment {
+        margin: 15px 0;
+      }
+    }
+  }
+}
